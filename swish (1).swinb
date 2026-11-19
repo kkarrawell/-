@@ -1,0 +1,28 @@
+<div class="notebook">
+
+<div class="nb-cell program" name="p1">
+themes.
+solve(Answer) :-
+    permutation([0, 1, 2, 3], [WolfSeat, NifSeat, NafSeat, NufSeat]),
+    NafSeat = 0,
+    WolfSeat is (NafSeat + 1) mod 4,
+    NufSeat is (NafSeat + 2) mod 4,
+    permutation([flora, sport, space, fauna],
+                [Wolf, Nif, Naf, Nuf]),
+    Wolf = fauna,
+    Nuf \= sport,
+
+    People = [person(wolf, Wolf, WolfSeat),
+              person(nif_nif, Nif, NifSeat),
+              person(naf_naf, Naf, NafSeat),
+              person(nuf_nuf, Nuf, NufSeat)],
+    member(person(_, space, SpaceSeat), People),
+    NifSeat is (SpaceSeat + 3) mod 4,
+
+    Answer = [wolf-Wolf,
+              nif_nif-Nif,
+              naf_naf-Naf,
+              nuf_nuf-Nuf].
+</div>
+
+</div>
